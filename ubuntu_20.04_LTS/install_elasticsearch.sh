@@ -9,9 +9,6 @@ elasticsearch_version=7.10.2
 # Make script halt if anything goes wrong
 set -e
 
-# Install Java 11
-sudo apt-get -y install openjdk-11-jre-headless
-
 # Add Elastic.co package signing key
 curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic.gpg
 
