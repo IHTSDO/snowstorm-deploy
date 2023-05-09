@@ -9,6 +9,9 @@ snowstorm_version=8.1.0
 # Make script halt if anything goes wrong
 set -e
 
+# Install Java 11
+sudo apt install openjdk-11-jre-headless
+
 # Add repo
 echo "deb [trusted=yes] https://maven3.ihtsdotools.org/repository/debian-releases/ bionic main" | sudo tee /etc/apt/sources.list.d/maven3_ihtsdotools_org_repository_debian_releases.list
 
@@ -17,6 +20,8 @@ sudo apt-get update
 
 # Install Snowstorm
 sudo apt-get install -y snowstorm=${snowstorm_version}
+# Make Snowstorm user the owner of the installation directory
+sudo chown -R snowstorm:snowstorm /opt/snowstorm
 
 # Update memory settings in supervisor config
 sed -i 's/command.*/command = \/usr\/bin\/java -Xms4g -Xmx4g -Djava.security.egd=file:\/dev\/urandom -jar %(program_name)s.jar/g' /etc/supervisor/conf.d/snowstorm.conf
