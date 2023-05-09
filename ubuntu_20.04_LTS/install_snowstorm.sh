@@ -21,7 +21,7 @@ sudo apt-get install -y snowstorm=${snowstorm_version}
 sudo chown -R snowstorm:snowstorm /opt/snowstorm
 
 # Update memory settings in supervisor config
-sed -i 's/command.*/command = \/usr\/bin\/java -Xms4g -Xmx4g -Djava.security.egd=file:\/dev\/urandom -jar %(program_name)s.jar/g' /etc/supervisor/conf.d/snowstorm.conf
+sudo sed -i 's/command.*/command = \/usr\/bin\/java -Xms4g -Xmx4g -Djava.security.egd=file:\/dev\/urandom -jar %(program_name)s.jar/g' /etc/supervisor/conf.d/snowstorm.conf
 
 # Reload supervisor with new config
 sudo supervisorctl reload
