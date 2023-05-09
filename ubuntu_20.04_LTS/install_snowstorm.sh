@@ -9,9 +9,6 @@ snowstorm_version=8.1.0
 # Make script halt if anything goes wrong
 set -e
 
-# Install Java 11
-sudo apt install openjdk-11-jre-headless
-
 # Add repo
 echo "deb [trusted=yes] https://maven3.ihtsdotools.org/repository/debian-releases/ bionic main" | sudo tee /etc/apt/sources.list.d/maven3_ihtsdotools_org_repository_debian_releases.list
 
