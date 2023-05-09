@@ -20,6 +20,8 @@ sudo apt-get update
 
 # Install Snowstorm
 sudo apt-get install -y snowstorm=${snowstorm_version}
+# Add config missing from 8.1.0
+echo 'codesystem.config.SNOMEDCT-AT=Austrian Edition|11000234105|at|ELGA GmbH' | tee -a /opt/snowstorm/application.properties
 # Make Snowstorm user the owner of the installation directory
 sudo chown -R snowstorm:snowstorm /opt/snowstorm
 
