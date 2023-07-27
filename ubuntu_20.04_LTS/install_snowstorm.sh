@@ -4,7 +4,7 @@
 # A server with 16g of RAM is recommended while importing and processing large RF2 files.
 # This script installs the Snowstorm application with 4g of memory.
 
-snowstorm_version=8.1.0
+snowstorm_version=8.2.2
 
 # Make script halt if anything goes wrong
 set -e
@@ -20,8 +20,6 @@ sudo apt-get update
 
 # Install Snowstorm
 sudo apt-get install -y snowstorm=${snowstorm_version}
-# Add config missing from 8.1.0
-echo 'codesystem.config.SNOMEDCT-AT=Austrian Edition|11000234105|at|ELGA GmbH' | sudo tee -a /opt/snowstorm/application.properties
 # Make Snowstorm user the owner of the installation directory
 sudo chown -R snowstorm:snowstorm /opt/snowstorm
 
