@@ -29,6 +29,6 @@ sudo sed -i 's/command.*/command = \/usr\/bin\/java -Xms4g -Xmx4g -Djava.securit
 # Reload supervisor with new config
 sudo supervisorctl reload
 
-echo "Snowstorm will take about a minute to start. You can tail the log with this command:\n sudo supervisorctl tail -f snowstorm"
+echo "Snowstorm will take about a minute to start. You can tail the log with this command: sudo supervisorctl tail -f snowstorm"
 echo "Once started the native SNOMED CT API will be available at http://localhost:8080 the FHIR API will be available at http://localhost:8080/fhir"
 echo "No terminologies or code systems are preloaded into the application."
