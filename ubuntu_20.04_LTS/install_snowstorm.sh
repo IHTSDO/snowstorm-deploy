@@ -4,13 +4,13 @@
 # A server with 16g of RAM is recommended while importing and processing large RF2 files.
 # This script installs the Snowstorm application with 4g of memory.
 
-snowstorm_version=8.2.2
+snowstorm_version=9.2.0
 
 # Make script halt if anything goes wrong
 set -e
 
 # Install Java 11
-sudo apt-get -y install openjdk-11-jre-headless
+sudo apt-get -y install openjdk-17-jre-headless
 
 # Add repo
 echo "deb [trusted=yes] https://maven3.ihtsdotools.org/repository/debian-releases/ bionic main" | sudo tee /etc/apt/sources.list.d/maven3_ihtsdotools_org_repository_debian_releases.list

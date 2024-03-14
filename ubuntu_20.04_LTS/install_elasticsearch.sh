@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# The data store of Snowstorm version 8.x is Elasticsearch version 7.10.2, or a later 7.x version. 
+# The data store of Snowstorm version 9.x is Elasticsearch version 7.10.2, or a later 7.x version.
 # A server with 16g of RAM is recommended while importing and processing large RF2 files.
 # This script installs Elasticsearch 7.10.2 assigning 4g of memory.
 
