@@ -8,3 +8,13 @@ Run these using:
 bash <(curl -s https://raw.githubusercontent.com/IHTSDO/snowstorm-deploy/main/ubuntu_20.04_LTS/install_elasticsearch.sh )
 bash <(curl -s https://raw.githubusercontent.com/IHTSDO/snowstorm-deploy/main/ubuntu_20.04_LTS/install_snowstorm.sh )
 ```
+Snowstorm will start on HTTP port 8080.
+
+---
+
+To enable Snowstorm access on port 80 using Nginx: [install_nginx.sh](install_nginx.sh)
+
+Run this using:
+```
+bash <(curl -s https://raw.githubusercontent.com/IHTSDO/snowstorm-deploy/main/ubuntu_20.04_LTS/install_nginx.sh )
+```
