@@ -1,20 +1,21 @@
 #!/bin/bash
 
-# The data store of Snowstorm version 9.x is Elasticsearch version 7.10.2, or a later 7.x version.
+# The data store of Snowstorm version 10.x is Elasticsearch version 8.11.x, or a later 8.x version.
 # A server with 16g of RAM is recommended while importing and processing large RF2 files.
-# This script installs Elasticsearch 7.10.2 assigning 4g of memory.
+# This script installs Elasticsearch 8.11.4 assigning 4g of memory.
 
-elasticsearch_version=7.10.2
+elasticsearch_version=8.11.4
 
 # Make script halt if anything goes wrong
 set -e
 
 # Add Elastic.co package signing key
-curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic.gpg
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
 
 # Add Elastic.co package repository
-echo "deb [signed-by=/usr/share/keyrings/elastic.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" \
-| sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get install apt-transport-https
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" \
+| sudo tee /etc/apt/sources.list.d/elastic-8.x.list
 
 # Update package manager
 sudo apt update
