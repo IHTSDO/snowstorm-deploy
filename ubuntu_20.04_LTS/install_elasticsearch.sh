@@ -27,7 +27,7 @@ sudo apt install -y elasticsearch=${elasticsearch_version}
 echo -e "network.host: localhost\nxpack.security.enabled: false\n" > tmp.txt
 
 # Copy in remaining config
-sudo cat /etc/elasticsearch/elasticsearch.yml >> tmp.txt
+sudo grep -v 'xpack.security.enabled' /etc/elasticsearch/elasticsearch.yml >> tmp.txt
 
 # Replace config file without changing file permissions
 cat tmp.txt | sudo tee /etc/elasticsearch/elasticsearch.yml
