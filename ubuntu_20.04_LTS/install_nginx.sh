@@ -12,5 +12,5 @@ sudo rm -rf /etc/nginx/sites-enabled/default
 # Add Nginx config for Snowstorm
 curl 'https://raw.githubusercontent.com/IHTSDO/snowstorm-deploy/main/ubuntu_20.04_LTS/snowstorm-nginx.conf' | sudo tee /etc/nginx/conf.d/snowstorm.conf
 
-# Start Nginx
-sudo nginx
+# Reload Nginx
+sudo nginx -s reload
