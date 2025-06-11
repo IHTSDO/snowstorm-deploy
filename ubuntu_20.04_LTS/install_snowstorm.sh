@@ -4,7 +4,7 @@
 # A server with 16g of RAM is recommended while importing and processing large RF2 files.
 # This script installs the Snowstorm application with 4g of memory.
 
-snowstorm_version=10.2.1
+snowstorm_version=10.8.2
 
 # Make script halt if anything goes wrong
 set -e
