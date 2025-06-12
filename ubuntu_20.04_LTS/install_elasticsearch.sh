@@ -12,12 +12,17 @@ set -e
 # Add Elastic.co package signing key
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
 
-# Add Elastic.co package repository
+# Update package manager
+sudo apt update
+
+# Install required HTTPS transport
 sudo apt-get install apt-transport-https
+
+# Add Elastic.co package repository
 echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" \
 | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
 
-# Update package manager
+# Update package manager again
 sudo apt update
 
 # Install Elasticsearch
