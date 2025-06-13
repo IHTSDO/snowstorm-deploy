@@ -5,6 +5,7 @@
 # This script installs Elasticsearch 8.11.1 assigning 4g of memory.
 
 elasticsearch_version=8.11.1
+echo "Installing Elasticsearch version ${elasticsearch_version}"
 
 # Make script halt if anything goes wrong
 set -e
