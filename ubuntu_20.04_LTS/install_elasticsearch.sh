@@ -26,6 +26,7 @@ echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://arti
 sudo apt update
 
 # Install Elasticsearch
+sudo apt remove -y elasticsearch || true
 sudo apt install -y elasticsearch=${elasticsearch_version}
 
 # Set config options in temp file
