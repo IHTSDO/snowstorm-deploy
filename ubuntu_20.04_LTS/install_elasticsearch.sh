@@ -10,7 +10,7 @@ elasticsearch_version=8.11.4
 set -e
 
 # Add Elastic.co package signing key
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --yes --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
 
 # Update package manager
 sudo apt update
